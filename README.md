@@ -17,4 +17,5 @@ methods work and to learn how to tune hyperparameters in this methods.
 ## Resutls and Analysis:
 
 1. PCA vs LDA 
-  Principal Component Analysis (PCA) works by identifying the directions (components) that maximize the variance in a dataset. In other words, it seeks to find the linear combination of features that captures as much variance as possible.
+ - Principal Component Analysis (PCA) works by identifying the directions (components) that maximize the variance in a dataset. In other words, it seeks to find the linear combination of features that captures as much variance as possible. PCA is supervised dimensionality reduction techniques.  Unlike PCA, however, LDA is a supervised learning method, which means it takes class labels into account when finding directions of maximum variance. This makes LDA particularly well-suited for classification tasks where you want to maximize class separability.
+ - For this classification problem, data compressed with LDA shows better performace than PCA.
