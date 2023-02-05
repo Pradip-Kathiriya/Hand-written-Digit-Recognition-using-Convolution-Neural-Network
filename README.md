@@ -23,9 +23,11 @@ methods work and to learn how to tune hyperparameters in this methods.
 
 2. Support Vector Machine with Linear Kernel
  - For linear Kernel, the hyperparameter is C. The C parameter tells the SVM optimization how much you want to avoid misclassifying each training example. For large values of C, the optimization will choose a smaller-margin hyperplane if that hyperplane does a better job of getting all the training points classified correctly. Conversely, a very small value of C will cause the optimizer to look for a larger-margin separating hyperplane, even if that hyperplane misclassifies more points. For very tiny values of C, you should get misclassified examples, often even if your training data is linearly separable. 
- - 
+ - In this experiment, C has a little impact on the model performance. As we increases the value of C from 0.01 to 10, the test accuracy showed slight improvement only for data compressed using LDA.
 
 3. Support Vector Machine with Polynomial Kernel
 - For polynomial kernel, the hyperparameter is degree of polynomial. The higher degree tends to make decision boundary more flexible to classify more number of training point correctly.
+- For MNIST data set, Polynomial kernel performed best for degree 3. As we further increase degree, model started to overfit and test accuracy started decreasing.
 
-6. 
+4. Support Vector Machine with RBF Kernel
+- 
