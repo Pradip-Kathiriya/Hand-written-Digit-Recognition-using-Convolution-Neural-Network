@@ -16,12 +16,12 @@ methods work and to learn how to tune hyperparameters in this methods.
 
 ## Resutls and Analysis:
 
-1. PCA vs LDA 
+**1. PCA vs LDA**
   - Principal Component Analysis (PCA) works by identifying the directions (components) that maximize the variance in a dataset. In other words, it seeks to find the linear combination of features that captures as much variance as possible. PCA is supervised dimensionality reduction techniques.  Unlike PCA, however, LDA is a supervised learning method, which means it takes class labels into account when finding directions of maximum variance. This makes LDA particularly well-suited for classification tasks where you want to maximize class separability.
   - For PCA number of principal component chosed are 10 and for LDA are 8. 
   - For this classification problem, data compressed with LDA shows better performance than PCA for most of the problem.
 
-2. Support Vector Machine with Linear Kernel
+**2. Support Vector Machine with Linear Kernel**
  - For linear Kernel, the hyperparameter is C. The C parameter tells the SVM optimization how much you want to avoid misclassifying each training example. For large values of C, the optimization will choose a smaller-margin hyperplane if that hyperplane does a better job of getting all the training points classified correctly. Conversely, a very small value of C will cause the optimizer to look for a larger-margin separating hyperplane, even if that hyperplane misclassifies more points. For very tiny values of C, you should get misclassified examples, often even if your training data is linearly separable. 
  - In this experiment, C has a little impact on the model performance. As we increases the value of C from 0.01 to 10, the test accuracy showed slight improvement only for data compressed using LDA. It seems that data is distributed in such a way that C has a little impact on the accuracy.
 
@@ -32,7 +32,7 @@ methods work and to learn how to tune hyperparameters in this methods.
     |   Linear   |      C = 5      |         84.49 %        |         89.13 %        |
     |   Linear   |      C = 10     |         84.40 %        |         89.14 %        |
 
-3. Support Vector Machine with Polynomial Kernel
+**3. Support Vector Machine with Polynomial Kernel**
 - For polynomial kernel, the hyperparameter is degree of polynomial. The higher degree tends to make decision boundary more flexible to classify more number of training point correctly.
 - For MNIST data set, Polynomial kernel performed best for degree 3. As we further increase degree, model started to overfit and test accuracy started decreasing.
 
@@ -42,7 +42,7 @@ methods work and to learn how to tune hyperparameters in this methods.
     | Polynomial |    Degree = 4   |         88.07 %        |         86.64 %        |
     | Polynomial |    Degree = 5   |         88.37 %        |         86.80 %        |
 
-4. Support Vector Machine with RBF Kernel
+**4. Support Vector Machine with RBF Kernel**
 - For RBF Kernel, the hyperparameter is $\gamma$. The $\gamma$ parameter defines how far the influence of a single training example reaches, with low values meaning ‘far’ and high values meaning ‘close’. The lower values of gamma result in models with lower accuracy and the same as the higher values of $\gamma$. It is the intermediate values of $\gamma$ which gives a model with good decision boundaries.
 - In this experiment, model achieve best test acuracy when $\gamma$ is equal to 0.01. As we furhter increase the value of $\gamma$ model started overfitting and test accuracy started dropping.
 
