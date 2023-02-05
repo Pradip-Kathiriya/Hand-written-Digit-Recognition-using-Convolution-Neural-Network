@@ -14,7 +14,7 @@ methods work and to learn how to tune hyperparameters in this methods.
 - CNN architecture are built from the scratch, train it on the MNIST training set and test it on testing set.
 - The purpose of this section is to understand how the CNN works, how to build it from scratch, to experiment with the different hyperparameter to understand its effect on the model performance and how to tune them to achieve better model performance.
 
-## Resutls and Analysis:
+## Results and Analysis:
 
 **1. PCA vs LDA**
   - Principal Component Analysis (PCA) works by identifying the directions (components) that maximize the variance in a dataset. In other words, it seeks to find the linear combination of features that captures as much variance as possible. PCA is supervised dimensionality reduction techniques.  Unlike PCA, however, LDA is a supervised learning method, which means it takes class labels into account when finding directions of maximum variance. This makes LDA particularly well-suited for classification tasks where you want to maximize class separability.
@@ -55,7 +55,36 @@ methods work and to learn how to tune hyperparameters in this methods.
 **5. Logistic Regression**
 The hyperparameter for the logistic regressor is learning rate. It is updated using the gradient descent method. For experimentation, the learning rate is changed to different values and a loss curve is observed. It is observed that loss is converging for very few values near 10<sup>-5</sup>. When the learning rate is high, the loss is exploding and goes to infinity. When the learning rate is lower than this, loss convergence is extremely slow. Following is the loss curve during training when learning rate is 10<sup>-5</sup>.
 
+![LRwithPCA](https://user-images.githubusercontent.com/90370308/216848557-4f52ba3c-40e0-451d-999d-a4bbc10d8c21.png)![LRwithLDA](https://user-images.githubusercontent.com/90370308/216848566-5de367c7-7316-4b1e-a869-39a7849604f0.png)
 
+**6. Convolutional Neural Network**
+
+In this part, Neural Network is used for digit identification on the MNIST data set. The architecture is designed using the thumb rule that the “number of activations” should not abruptly change from layer to layer. The architecture parameter is shown in the below table. Hyperparameters such as learning rate, type of optimizer, batch size, number of epochs, etc... are tuned by experimentation. Some of the results during the hyperparameter tuning are also shown in the below section. After the training, the network is evaluated on the validation set.
+
+Architecture:
+
+| Layer |                                               Description                                              |
+|:-----:|:------------------------------------------------------------------------------------------------------:|
+|   1   |  Convolutional : In channels = 1, Out Channels = 2, Kernel Size = (5,5), Activation = Relu, Stride = 1 |
+|   2   |  Convolutional : In channels = 2, Out Channels = 4, Kernel Size = (5,5), Activation = Relu, Stride = 1 |
+|   3   |  Convolutional : In channels = 4, Out Channels = 8, Kernel Size = (5,5), Activation = Relu, Stride = 1 |
+|   4   | Convolutional : In channels = 8, Out Channels = 16, Kernel Size = (5,5), Activation = Relu, Stride = 2 |
+|   5   |                Fully Connected: In channels = 576, Out channels = 120, Activation = Relu               |
+|   6   |               Fully Connected: In channels = 120, Out channels = 10, Activation = Softmax              |
+
+Hyperparameter Tuning and Result:
+- Optimizer = SGD, Learning Rate = 10<sup>-5</sup>, Test Accuracy = 98.32%
+
+![SGD](https://user-images.githubusercontent.com/90370308/216848988-a8fd2d20-47a2-431a-9dc7-60ee9b417500.png)
+- Optimizer = Adam, Learning Rate = 10<sup>-5</sup>, Test Accuracy = 98.18%
+
+![Adam_16_train](https://user-images.githubusercontent.com/90370308/216849049-7ed31583-1f5f-4de2-b283-4737de48b360.png)
+- Optimizer = Adam, Learning Rate = 10<sup>-4</sup>, Test Accuracy = 98.30%
+
+![Adam_16_train](https://user-images.githubusercontent.com/90370308/216849127-8a4c5dc2-252d-4e54-be0f-224a4645c880.png)
+- Optimizer = Adam, Learning Rate = 10<sup>-6</sup>, Test Accuracy = 87.10%
+
+![2](https://user-images.githubusercontent.com/90370308/216849164-9fe58148-a56b-48c6-84fb-281490f644ac.png)
 
 ## Requirement
 Python 2.0 or above
