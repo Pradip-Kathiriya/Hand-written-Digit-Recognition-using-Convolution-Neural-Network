@@ -52,3 +52,14 @@ methods work and to learn how to tune hyperparameters in this methods.
     |     RBF    | $\gamma$ = 0.1  |         87.7 %         |         91.76 %        |
     |     RBF    | $\gamma$ = 1    |         30.23 %        |         88.27%         |
     |     RBF    |  $\gamma$ = 10  |         11.35%         |         32.11%         |
+**5. Logistic Regression**
+The hyperparameter for the logistic regressor is learning rate. It is updated using the gradient descent method. For experimentation, the learning rate is changed to different values and a loss curve is observed. It is observed that loss is converging for very few values near 10<sup>-5</sup>. When the learning rate is high, the loss is exploding and goes to infinity. When the learning rate is lower than this, loss convergence is extremely slow. Following is the loss curve during training when learning rate is 10<sup>-5</sup>
+
+## Requirement
+Python 2.0 or above
+
+## License
+
+ [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+Copyright (c) Feb 2023 Pradip Kathiriya
