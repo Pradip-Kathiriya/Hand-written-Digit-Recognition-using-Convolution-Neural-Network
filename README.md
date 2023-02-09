@@ -1,7 +1,5 @@
 ## Project Description:
-In this project, I have implemented Support vector machine (Linear Kernel, Polynomial Kernel, RBF Kernel), Logistic Regression and Convolutional
-Neural Network to achieve hand-written digits recognition on MNIST data set. The purpose of this project is to understand fundamentally how these 
-methods work and to learn how to tune hyperparameters in this methods.
+In this project, I have implemented a Support vector machine (Linear Kernel, Polynomial Kernel, RBF Kernel), Logistic Regression, and Convolutional Neural Network to achieve hand-written digits recognition on an MNIST data set. The purpose of this project is to understand fundamentally how these methods work and to learn how to tune hyperparameters in these methods.
 
 ## Pipeline
 ### Support Vector Machine (SVM with Linear Kernel, Polynomial Kernel, and RBF Kernel)
